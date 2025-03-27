@@ -35,12 +35,16 @@ export default function candidatesPage() {
   return (
     <div className={`min-h-screen bg-gray-50 ${poppins.className}`}>
       <nav className="bg-white shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 py-4">
-          <h1 className="text-2xl font-bold text-[#0057FF]">HyreSync.AI</h1>
+        <div className="max-w-7xl mx-auto px-8 py-4">
+          {/* <link href='#'> */}
+          <Link href="/main" className="text-2xl font-bold text-[#0057FF]">HyreSync.AI</Link>
+
+          
+          
         </div>
       </nav>
 
-      <main className="max-w-7xl mx-auto px-4 py-8">
+      <main className="max-w-7xl mx-auto px-8 py-8">
         <h2 className="text-3xl font-bold text-gray-900 mb-8">Available Candidates</h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

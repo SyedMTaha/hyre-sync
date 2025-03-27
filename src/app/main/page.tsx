@@ -133,8 +133,9 @@ export default function LandingPage() {
               </ul>
             </div>
           </div>
-          <div className="mt-8 pt-8 border-t text-center text-gray-600">
+          <div className="mt-8 pt-8 border-t  flex justify-between items-center text-gray-600">
             <p>&copy; 2024 HyreSync.AI. All rights reserved.</p>
+            <p className=''>Privacy Policy. Terms & Condition.</p>
           </div>
         </div>
       </footer>
