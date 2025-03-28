@@ -5,11 +5,25 @@ import Image from 'next/image';
 import { Poppins } from 'next/font/google'
 import {useRouter} from 'next/navigation';
 import Link from 'next/link';
+import {auth } from '../../config/firebase';
+import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 
 const poppins = Poppins({
   weight: ['400', '500', '600', '700'],
   subsets: ['latin'],
 });
+
+const handleGoogleSignIn = async () => {
+  try {
+    const provider = new GoogleAuthProvider();
+    const result = await signInWithPopup(auth, provider);
+    // Handle successful sign in
+    console.log(result.user);
+  } catch (error) {
+    // Handle errors
+    console.error(error);
+  }
+};
 
 export default function SignIn() {
   const router = useRouter();
@@ -46,6 +60,18 @@ export default function SignIn() {
       router.push('/main');
     } else {
       setError('Invalid email or password');
+    }
+  };
+
+  const handleGoogleSignIn = async () => {
+    try {
+      const provider = new GoogleAuthProvider();
+      const result = await signInWithPopup(auth, provider);
+      console.log('Google Sign In successful', result.user);
+      router.push('/main'); // Redirect after successful sign in
+    } catch (error) {
+      console.error('Google Sign In Error:', error);
+      setError('Failed to sign in with Google');
     }
   };
     
@@ -119,8 +145,9 @@ export default function SignIn() {
 
             {/* Social Login Buttons */}
             <div className="space-y-3">
-              <button
-                type="button"
+              <button 
+                type="button" 
+                onClick={handleGoogleSignIn}
                 className="w-full flex items-center justify-center px-4 py-2 border text-black border-gray-300 rounded-xl hover:bg-gray-50 transition duration-200"
               >
                 <Image src="/assets/google-icon.png" alt="Google" width={30} height={30} className="mr-2" />

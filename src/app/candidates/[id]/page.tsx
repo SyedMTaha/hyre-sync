@@ -255,7 +255,8 @@ export default function  CandidateDetails() {
   
             {/* Right Column */}
             <div className="space-y-6">
-              <section className="bg-white rounded-lg border p-6">
+              {/* contact candidate */}
+              {/* <section className="bg-white rounded-lg border p-6">
                 <h2 className="text-lg font-semibold mb-4 text-black">Contact</h2>
                 <button className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition duration-200">
                   Message Candidate
@@ -263,7 +264,7 @@ export default function  CandidateDetails() {
                 <p className="text-center text-sm text-gray-500 mt-3">
                   Usually responds within 24 hours
                 </p>
-              </section>
+              </section> */}
   
               <section className="bg-white rounded-lg border p-6">
                 <h2 className="text-lg font-semibold mb-4 text-black">Skills</h2>
